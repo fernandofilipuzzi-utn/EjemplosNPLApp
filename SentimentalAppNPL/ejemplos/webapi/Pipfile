@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-swagger = "*"
+flask-restful-swagger = "*"
+jinja2 = "==2.11.3"
+MarkupSafe = "==2.0.1"
+flasgger = "==0.9.5"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
