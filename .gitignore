@@ -401,6 +401,7 @@ bin
 obj
 *.~ml
 *package
+.vs
 
 # aplicaciones python
 .venv
