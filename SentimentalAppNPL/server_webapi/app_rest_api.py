@@ -29,9 +29,6 @@ api = Api(app)
 model=SentimentalModel()
 model.CargaPretrained()
 
-calificacion_resource=CalificacionResource(model)
-
-#api.add_resource(calificacion_resource, '/calificaciones')
 api.add_resource(CalificacionResource, '/calificaciones', resource_class_kwargs={'model': model})
 
 if __name__ == '__main__':

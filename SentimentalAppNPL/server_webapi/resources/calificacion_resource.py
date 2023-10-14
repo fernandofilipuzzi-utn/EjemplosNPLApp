@@ -25,7 +25,7 @@ class CalificacionResource(Resource):
             description: datos
             required: false
             type: object
-            example: [{"id":"1", "comentario":"hola"},{"id":"1", "comentario":"hola"}]
+            example: [{"id":"1", "comentario":"la película fue buenísima"},{"id":"2", "comentario":"estuvo regular."}]
             schematic:
               type: array
               items:
