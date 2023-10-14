@@ -1,8 +1,4 @@
-#import warnings
-#warnings.filterwarnings("ignore")
-#import os
-#os.environ["HF_HOME"] = "/data/repos/MiGPT2/bert/.cache/huggingface"
-
+#app_sentimental.py
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -16,7 +12,6 @@ relative_path = os.path.join(script_dir, ".cache/huggingface")
 
 # Establece la variable de entorno
 os.environ["HF_HOME"] = relative_path
-
 
 from transformers import AutoTokenizer, BertForSequenceClassification, AdamW
 from sklearn.model_selection import train_test_split

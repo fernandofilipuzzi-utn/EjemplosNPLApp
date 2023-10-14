@@ -8,19 +8,20 @@ class ItemModel:
 
 item_model = {
     'id': fields.Integer,
-    'mensaje': fields.String
+    'comentario': fields.String,
+    'valoracion': fields.Integer
 }
 
 class ItemModelResult:
-    def __init__(self, id, mensaje, calificacion):
+    def __init__(self, id, comentario, valoracion):
         self.id = id
-        self.mensaje = mensaje
-        self.calificacion = calificacion
+        self.comentario = comentario
+        self.valoracion = valoracion
 
 item_model_result = {
     'id': fields.Integer,
-    'mensaje': fields.String,
-    'calificacion': fields.Integer
+    'comentario': fields.String,
+    'valoracion': fields.Integer
 }
 
 class InputModel:

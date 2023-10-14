@@ -12,15 +12,15 @@ namespace ClientAPIWebDesktop.Modelos
         [JsonProperty("id")]
         public int Id { get; set; }
 
-        [JsonProperty("mensaje")]
-        public string Mensaje { get; set; }
+        [JsonProperty("comentario")]
+        public string Comentario { get; set; }
 
-        [JsonProperty("calificacion")]
-        public int Calificacion { get; set; }
+        [JsonProperty("valoracion")]
+        public int Valoracion { get; set; }
 
         public override string ToString()
         { 
-            return $"{Id},{Mensaje},{Calificacion}";
+            return $"{Id},{Comentario},{Valoracion}";
         }
     }
 }

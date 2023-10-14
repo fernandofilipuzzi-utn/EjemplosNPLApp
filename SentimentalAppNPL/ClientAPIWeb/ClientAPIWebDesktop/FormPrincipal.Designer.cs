@@ -29,30 +29,30 @@ namespace ClientAPIWebDesktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbComentario = new System.Windows.Forms.TextBox();
+            this.tbRespuesta = new System.Windows.Forms.TextBox();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbComentario
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(392, 61);
-            this.textBox1.TabIndex = 0;
+            this.tbComentario.Location = new System.Drawing.Point(1, 2);
+            this.tbComentario.Multiline = true;
+            this.tbComentario.Name = "tbComentario";
+            this.tbComentario.Size = new System.Drawing.Size(692, 189);
+            this.tbComentario.TabIndex = 0;
             // 
-            // textBox2
+            // tbRespuesta
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 96);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(392, 61);
-            this.textBox2.TabIndex = 1;
+            this.tbRespuesta.Location = new System.Drawing.Point(1, 197);
+            this.tbRespuesta.Multiline = true;
+            this.tbRespuesta.Name = "tbRespuesta";
+            this.tbRespuesta.Size = new System.Drawing.Size(692, 158);
+            this.tbRespuesta.TabIndex = 1;
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(422, 29);
+            this.btnEnviar.Location = new System.Drawing.Point(703, 29);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(113, 44);
             this.btnEnviar.TabIndex = 2;
@@ -64,10 +64,10 @@ namespace ClientAPIWebDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 172);
+            this.ClientSize = new System.Drawing.Size(828, 367);
             this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbRespuesta);
+            this.Controls.Add(this.tbComentario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormPrincipal";
             this.Text = "Form Principal";
@@ -78,8 +78,8 @@ namespace ClientAPIWebDesktop
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbComentario;
+        private System.Windows.Forms.TextBox tbRespuesta;
         private System.Windows.Forms.Button btnEnviar;
     }
 }
