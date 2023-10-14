@@ -9,7 +9,7 @@ En el repositorio se encuentran tres aplicaciones:
 
 **1- <a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/tree/main/SentimentalAppNPL/server_webapi">server_webapi</a>** 
 
-Es servicio API rest python <b>9.11</b> que corre el modelo<br/>
+Es servicio API Rest realizado con Python <b>9.11</b> que corre el modelo<br/>
 
 * app_fine_tunning.py: toma el dataset y realiza el finetunning
 * app_test_fine_tunning.py: prueba el modelo
