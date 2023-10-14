@@ -1,7 +1,9 @@
 # Ejemplo de aplicación utilizando procesamiento de lenguaje natural.
 
 ## Descripción
-En este repositorio se aloja una aplicación de la utilización de un modelo de clasificación de sentimientos. El montaje consiste en tomar un listado de opiniones comentarios y darles una puntuación. En este caso se trabajo con una lista de críticas de cine.
+En este repositorio se aloja una aplicación de la utilización de un modelo de clasificación de sentimientos. El montaje consiste en tomar un listado de opiniones o comentarios y darles una puntuación. En este caso se trabajo con una lista de críticas de cine.
+
+Para La sintonía fina se utilizaron críticas y las valoraciones de las mismas extraidas del sítio <a href="https://www.filmaffinity.com/ar/film855019.html">filmaffinity</a>.
 
 Se realizó una API Rest en python que recibe las consultas a valorar y la cual levanta el modelo NPL. También se incluye una aplicación Windows Form en c# que completa la prueba de concepto de la idea de aplicación de este modelo de clasificación de sentimientos.
 
@@ -11,9 +13,9 @@ En el repositorio se encuentran tres aplicaciones:
 
 Es servicio API Rest realizado con Python <b>9.11</b> que corre el modelo<br/>
 
-* app_fine_tunning.py: toma el dataset y realiza el finetunning
-* app_test_fine_tunning.py: prueba el modelo
-* app_rest_api.py: corre el servicio
+* ```app_fine_tunning.py```: toma el dataset y realiza el finetunning
+* ```app_test_fine_tunning.py```: prueba el modelo
+* ```app_rest_api.py```: corre el servicio
 
 ```bash
 mkdir .venv
