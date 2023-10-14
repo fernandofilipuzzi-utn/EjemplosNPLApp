@@ -17,6 +17,5 @@ cliente c#  API rest que consume la api.<br/>
 
 **<a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/tree/main/SentimentalAppNPL/EdicionDataSet">EdicionDataSet</a>**
 
-Sirve para armar el dataset
-
+Sirve para armar el dataset que consiste en un archivo con un objeto json: Ejemplo actual: <a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/blob/main/SentimentalAppNPL/server_webapi/dataset/input.json">input.json</a>**
 
