@@ -38,7 +38,7 @@ finalmente, cambiar la ip en app_rest_api.py y correr con:
 python app_rest_api.py
 ```
 
-Para consultar la API lanzada, desde el navegador la url sería: http://ip_configurada/swagger
+Para consultar la API lanzada, desde el navegador la url sería: <br>http://<b>ip_configurada</b>:5000/swagger
 
 
 **<a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/tree/main/SentimentalAppNPL/ClientAPIWeb">ClientAPIWeb</a>**
