@@ -19,6 +19,14 @@ class SentimentalModel:
         script_dir = os.path.dirname(os.path.abspath(__file__))
         relative_path = os.path.join(script_dir, '..', '.cache','huggingface')
         os.environ["HF_HOME"] = relative_path
+        os.environ["HF_CACHE"] = relative_path
+        os.environ["HF_IMAGE"] = relative_path
+        os.environ["TRANSFORMERS_CACHE"] = relative_path
+
+        if not os.path.exists(relative_path):
+            os.makedirs(relative_path)        
+
+        print(relative_path)
 
         #model_base = "bert-base-uncased"
         model_base = "mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es"
@@ -48,7 +56,7 @@ class SentimentalModel:
         # Entrenamiento
         optimizer = AdamW(self.model.parameters(), lr=1e-5)
 
-        for epoch in range(20):  # Número de épocas
+        for epoch in range(10):  # Número de épocas 500
             outputs = self.model(**train_inputs, labels=train_labels)
             loss = outputs.loss
             loss.backward()
