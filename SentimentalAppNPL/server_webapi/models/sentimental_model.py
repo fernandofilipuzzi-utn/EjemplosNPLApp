@@ -1,39 +1,36 @@
-import warnings
+import warnings, os
+
 warnings.filterwarnings("ignore")
-import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+relative_path = os.path.join(script_dir, "../.cache/huggingface")
+os.environ["HF_HOME"] = relative_path
 
 from transformers import AutoTokenizer, BertForSequenceClassification, AdamW
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import torch
+import torch, json  
 
-import json
 
 class SentimentalModel:
 
     def __init__(self):
-        pass
+        self.script_dir=script_dir
+        self.relative_path=relative_path
+
+        if not os.path.exists(self.relative_path):
+            os.makedirs(self.relative_path)     
+         
+        #model_base = "bert-base-uncased"
+        self.model_base = "mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es"
+
+        print(self.relative_path)
+        
 
     def FineTunning(self):
-        # conf para la descarga
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        relative_path = os.path.join(script_dir, '..', '.cache','huggingface')
-        os.environ["HF_HOME"] = relative_path
-        os.environ["HF_CACHE"] = relative_path
-        os.environ["HF_IMAGE"] = relative_path
-        os.environ["TRANSFORMERS_CACHE"] = relative_path
-
-        if not os.path.exists(relative_path):
-            os.makedirs(relative_path)        
-
-        print(relative_path)
-
-        #model_base = "bert-base-uncased"
-        model_base = "mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es"
-        
         # Preparación de datos y tokenización
-        self.tokenizer = AutoTokenizer.from_pretrained(model_base)
-        self.model = BertForSequenceClassification.from_pretrained(model_base, num_labels=11, ignore_mismatched_sizes=True)  
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_base)
+        self.model = BertForSequenceClassification.from_pretrained(self.model_base, num_labels=11, ignore_mismatched_sizes=True)  
 
         train_texts, train_labels=self.__GetDataset()
         
@@ -77,9 +74,6 @@ class SentimentalModel:
         self.tokenizer.save_pretrained(relative_path_fine_tunned)
 
     def CargaPretrained(self):
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        os.environ["HF_HOME"] = os.path.join(script_dir, '..','.cache','huggingface')
-
         model_base_fine_tunned = ".cache/app-models-fine-tunned/model_base_fine_tunned"
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_base_fine_tunned)

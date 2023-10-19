@@ -16,10 +16,14 @@ relative_path = os.path.join(script_dir, ".cache/huggingface")
 
 # Establece la variable de entorno
 os.environ["HF_HOME"] = relative_path
+
+# Probando estas variables
 os.environ["HF_CACHE"] = relative_path
 os.environ["HF_IMAGE"] = relative_path
 os.environ["TRANSFORMERS_CACHE"] = relative_path
 
+# la configuración de HF_CACHE debe ser antes de hacer los imports.
+# sino toma el por default
 
 from transformers import AutoTokenizer, BertForSequenceClassification, AdamW
 from sklearn.model_selection import train_test_split
