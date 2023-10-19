@@ -1,18 +1,21 @@
 # Ejemplo de aplicación utilizando procesamiento de lenguaje natural.
 
 ## Descripción
-Una aplicación de la utilización de modelo sentimentales sería tomar un listado de opiniones y darles una puntuación. Por ejemplo, podrían ser opiniones de películas, compra de productos, etc.
-Este ejemplo consiste en montar el modelo en un api rest y consumir dicha api mediante una aplicación desktop, desde esta aplicación se pasan una lista de opciones y la api devuelve la puntuación de dichas opciones.
+En este repositorio se aloja una aplicación de la utilización de un modelo de clasificación de sentimientos. El montaje consiste en tomar un listado de opiniones o comentarios y darles una puntuación. En este caso se trabajo con una lista de críticas de cine.
 
-Hay tres aplicaciones:
+Para La sintonía fina se utilizaron críticas y las valoraciones de las mismas extraidas del sítio <a href="https://www.filmaffinity.com/ar/film855019.html">filmaffinity</a>.
 
-**<a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/tree/main/SentimentalAppNPL/server_webapi">server_webapi</a>** 
+Se realizó una API Rest en python que recibe las consultas a valorar y la cual levanta el modelo NPL. También se incluye una aplicación Windows Form en c# que completa la prueba de concepto de la idea de aplicación de este modelo de clasificación de sentimientos.
 
-Es servicio API rest python <b>9.11</b> que corre el modelo<br/>
+En el repositorio se encuentran tres aplicaciones:
 
-* app_fine_tunning.py: toma el dataset y realiza el finetunning
-* app_test_fine_tunning.py: prueba el modelo
-* app_rest_api.py: corre el servicio
+**1- <a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/tree/main/SentimentalAppNPL/server_webapi">server_webapi</a>** 
+
+Es servicio API Rest realizado con Python <b>9.11</b> que corre el modelo<br/>
+
+* ```app_fine_tunning.py```: toma el dataset y realiza el finetunning
+* ```app_test_fine_tunning.py```: prueba el modelo
+* ```app_rest_api.py```: corre el servicio
 
 ```bash
 mkdir .venv
@@ -41,11 +44,11 @@ python app_rest_api.py
 Para consultar la API lanzada, desde el navegador la url sería: <br>http://<b>ip_configurada</b>:5000/swagger
 
 
-**<a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/tree/main/SentimentalAppNPL/ClientAPIWeb">ClientAPIWeb</a>**
+**2- <a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/tree/main/SentimentalAppNPL/ClientAPIWeb">ClientAPIWeb</a>**
 
 Es el cliente c# API rest ejemplo que consume la API.<br/>
 
-**<a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/tree/main/SentimentalAppNPL/EdicionDataSet">EdicionDataSet</a>**
+**3- <a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/tree/main/SentimentalAppNPL/EdicionDataSet">EdicionDataSet</a>**
 
 Sirve para armar el dataset que consiste en un archivo con un objeto json: Ejemplo actual: <a href="https://github.com/fernandofilipuzzi-utn/EjemplosNPLApp/blob/main/SentimentalAppNPL/server_webapi/dataset/input.json">input.json</a>
 
