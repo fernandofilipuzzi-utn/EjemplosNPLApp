@@ -53,7 +53,7 @@ class SentimentalModel:
         # Entrenamiento
         optimizer = AdamW(self.model.parameters(), lr=1e-5)
 
-        for epoch in range(10):  # Número de épocas 500
+        for epoch in range(500):  # Número de épocas 500
             outputs = self.model(**train_inputs, labels=train_labels)
             loss = outputs.loss
             loss.backward()
