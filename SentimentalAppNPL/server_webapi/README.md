@@ -10,8 +10,8 @@ Se requiere varios gigas libres
 correr:
 
 mkdir .venv
-pipenv shell
 pipenv install
+pipenv shell
 
 luego, para la sintonía fina:
 

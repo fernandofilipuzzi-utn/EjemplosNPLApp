@@ -15,16 +15,14 @@ import torch, json
 class SentimentalModel:
 
     def __init__(self):
-        self.script_dir=script_dir
-        self.relative_path=relative_path
 
-        if not os.path.exists(self.relative_path):
-            os.makedirs(self.relative_path)     
+        if not os.path.exists(relative_path):
+            os.makedirs(relative_path)     
          
         #model_base = "bert-base-uncased"
         self.model_base = "mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es"
 
-        print(self.relative_path)
+        print(relative_path)
         
 
     def FineTunning(self):
@@ -68,13 +66,17 @@ class SentimentalModel:
             print(f"Accuracy on validation set: {accuracy:.2f}")
         
         # Guardar el modelo y el tokenizer en un directorio
-        relative_path_fine_tunned = os.path.join(script_dir, '..','.cache','app-models-fine-tunned','model_base_fine_tunned')
-        
+        #relative_path_fine_tunned = os.path.join(script_dir, '..','.cache','app-models-fine-tunned','model_base_fine_tunned')
+        relative_path_fine_tunned = os.path.join(script_dir, "../.cache/app-models-fine-tunned/model_base_fine_tunned")
+
         self.model.save_pretrained(relative_path_fine_tunned)
         self.tokenizer.save_pretrained(relative_path_fine_tunned)
 
     def CargaPretrained(self):
-        model_base_fine_tunned = ".cache/app-models-fine-tunned/model_base_fine_tunned"
+        #model_base_fine_tunned = ".cache/app-models-fine-tunned/model_base_fine_tunned"
+        model_base_fine_tunned = os.path.join(script_dir, "../.cache/app-models-fine-tunned/model_base_fine_tunned")
+
+        print(model_base_fine_tunned)
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_base_fine_tunned)
         self.model = BertForSequenceClassification.from_pretrained(model_base_fine_tunned)
